@@ -39,9 +39,10 @@ export function filterProducts(products, { tag = 'ALL', maxBudget = Infinity, qu
       const inName = item.name && item.name.toLowerCase().includes(cleanQuery);
       const inCategory = item.category && item.category.toLowerCase().includes(cleanQuery);
       const inReason = item.reason && item.reason.toLowerCase().includes(cleanQuery);
+      const inPainPoint = item.painPoint && item.painPoint.toLowerCase().includes(cleanQuery);
       const inTags = Array.isArray(item.tags) && item.tags.some((t) => t.toLowerCase().includes(cleanQuery));
 
-      if (!inName && !inCategory && !inReason && !inTags) {
+      if (!inName && !inCategory && !inReason && !inPainPoint && !inTags) {
         return false;
       }
     }
